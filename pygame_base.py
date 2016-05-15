@@ -10,6 +10,7 @@ BLACK = [  0,   0,   0]
 
 class App:
     def __init__(self):
+        # what does this function do exactly?
         self._running = True
         self.surface = None
         self.width = 640 # defines window width
