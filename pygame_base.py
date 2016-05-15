@@ -10,7 +10,10 @@ BLACK = [  0,   0,   0]
 
 class App:
     def __init__(self):
-        # what does this function do exactly?
+        # the __init__ function creates the object and sets up the INITial
+        # parameters, you probably won't have to change this function other
+        # than for the width, height, and framerate, any variables you need
+        # should be added to the on_init function
         self._running = True
         self.surface = None
         self.width = 640 # defines window width
@@ -20,6 +23,8 @@ class App:
         self.fps = 60 # sets the game's framerate (i.e. 'ticks' per second)
 
     def on_init(self):
+        # this game's setup function, sets up pygame and any variables the
+        # developer needs for the game to work properly
         pygame.init()
         self.surface = pygame.display.set_mode(self.size)
         self._running = True
@@ -28,6 +33,8 @@ class App:
         # beginning conditions
         # should use attributes of self
         # i.e. self.character for the player's character
+
+        # ^ add here ^
 
     def on_event(self, event):
         # things that happen when the user does something
@@ -47,9 +54,13 @@ class App:
         pygame.display.flip()
 
     def on_cleanup(self):
+        # this should only be changed if there are things that need to be
+        # cloased after the user quits the game, things like files
         pygame.quit()
 
     def on_execute(self):
+        # this calls the other functions in the game and doesn't need to be
+        # changed by the developer
         if self.on_init() == False:
             self._running = False
 
